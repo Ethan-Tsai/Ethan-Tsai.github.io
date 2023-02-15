@@ -7,15 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/physicico.ico">
     <link rel="stylesheet" href="./css/phone_index.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>物理演示-手機版首頁</title>
 </head>
 
 <body>
 
     <h1>中山大學物理系 <br> STEAM 生活物理實驗演示</h1>
+    <!--navbar-->
+    <div id="navbar">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.php">選單</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="./content_page/php_part/Introduction.php">關於本網頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./content_page/php_part/Blog.php">最新消息</a>
+                        </li>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    實驗分類
+                  </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./content_page/php_part/attr.php">趣味物理</a></li>
+                                <li><a class="dropdown-item" href="./content_page/php_part/rest.php">基礎物理</a></li>
+                                <li><a class="dropdown-item" href="./content_page/php_part/dess.php">驚奇物理</a></li>
+                                <li><a class="dropdown-item" href="./content_page/php_part/acco.php">生活物理</a></li>
+                                <li><a class="dropdown-item" href="./content_page/php_part/acco.php">能源物理</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--navbar_end-->
 
 </body>
 
