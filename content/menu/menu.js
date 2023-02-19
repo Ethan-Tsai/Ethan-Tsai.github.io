@@ -1,3 +1,28 @@
+class HtmlImport extends HTMLLinkElement {
+    constructor() {
+        super();
+    }
+    static get observedAttributes() {
+        return ['href'];
+    }
+    load() {
+        fetch(this.href).then(res => res.text()).then(html => {
+            this.style.display = 'block';
+            this.innerHTML = html;
+        });
+    }
+    attributeChangedCallback() {
+        this.load();
+    }
+}
+if (!customElements.get('ui-import')) {
+    customElements.define('ui-import', HtmlImport, {
+        extends: 'link'
+    });
+}
+// test//
+
+
 window.addEventListener("resize", function() {
     "use strict";
     window.location.reload();
