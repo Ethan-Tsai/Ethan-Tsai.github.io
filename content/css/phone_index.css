@@ -57,3 +57,16 @@ h2 {
 #news {
     margin-top: -30px;
 }
+
+#logo_img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: stretch;
+}
+
+#logo_img img {
+    height: 50px;
+}
