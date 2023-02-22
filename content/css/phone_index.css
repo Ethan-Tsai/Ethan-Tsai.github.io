@@ -27,6 +27,7 @@ h2 {
 .section {
     margin-top: 5px;
     background-color: #f8f9fa;
+    border-radius: 2% / 10%;
 }
 
 .section hr {
@@ -50,11 +51,11 @@ h2 {
     color: #fff4f4;
     background-color: rgba(169, 169, 169, 0.641);
     position: relative;
-    top: -30px;
+    top: -50px;
 }
 
 #news {
-    margin-top: -15px;
+    margin-top: -25px;
 }
 
 #logo_img {
