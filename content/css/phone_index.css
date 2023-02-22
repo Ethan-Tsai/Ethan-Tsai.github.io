@@ -27,7 +27,7 @@ h2 {
 .section {
     margin-top: 5px;
     background-color: #f8f9fa;
-    border-radius: 2% / 10%;
+    border-radius: 2%;
 }
 
 .section hr {
@@ -69,4 +69,9 @@ h2 {
 
 .navbar {
     border-radius: 2%;
+}
+
+iframe {
+    flex-grow: 1;
+    width: 100%;
 }
