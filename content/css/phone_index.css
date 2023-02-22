@@ -54,10 +54,6 @@ h2 {
     top: -50px;
 }
 
-#news {
-    margin-top: -25px;
-}
-
 #logo_img {
     display: flex;
     flex-direction: row;
