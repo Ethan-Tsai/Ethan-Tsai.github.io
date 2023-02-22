@@ -66,3 +66,7 @@ h2 {
 #logo_img img {
     height: 50px;
 }
+
+.navbar {
+    border-radius: 2%;
+}
