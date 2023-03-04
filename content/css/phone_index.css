@@ -75,3 +75,9 @@ iframe {
     flex-grow: 1;
     width: 100%;
 }
+
+@media(max-width:376px) {
+    h1 {
+        font-size: 25px;
+    }
+}

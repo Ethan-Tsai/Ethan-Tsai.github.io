@@ -96,6 +96,26 @@ h1 {
     }
 }
 
+@media(max-width: 376px) {
+    span {
+        font-size: 50%;
+    }
+    #logo_img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: stretch;
+    }
+    #logo_img img {
+        height: 40px;
+    }
+    h1 {
+        font-size: 35px;
+    }
+}
+
 #what_size {
     padding-top: 10%;
 }
