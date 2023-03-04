@@ -3,21 +3,9 @@ body {
     margin: 0px;
     align-items: center;
     background-image: url('./img/index.jpg');
-}
-
-html {
-    background-color: #444444;
-}
-
-body {
-    background-color: #444444;
     align-items: center;
     margin: 5px;
     margin-top: 10px;
-}
-
-img {
-    width: 100%;
 }
 
 h1 {
