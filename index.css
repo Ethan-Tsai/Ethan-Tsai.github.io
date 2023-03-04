@@ -44,6 +44,17 @@ h1 {
         font-size: 65px;
         line-height: 130%;
     }
+    #logo_img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: stretch;
+    }
+    #logo_img img {
+        height: 80px;
+    }
 }
 
 @media(max-width: 768px) {
@@ -83,6 +94,17 @@ h1 {
 @media(max-width: 420px) {
     span {
         font-size: 60%;
+    }
+    #logo_img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: stretch;
+    }
+    #logo_img img {
+        height: 50px;
     }
 }
 
