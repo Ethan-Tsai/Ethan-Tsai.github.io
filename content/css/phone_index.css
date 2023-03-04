@@ -84,3 +84,10 @@ iframe {
         height: 45px;
     }
 }
+
+#pdfin {
+    margin: auto;
+    width: 95%;
+    border: 3px solid green;
+    padding: 10px;
+}
