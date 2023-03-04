@@ -24,36 +24,6 @@
         font-family: Microsoft JhengHei;
     }
     
-    .section {
-        margin-top: 5px;
-        background-color: #f8f9fa;
-        border-radius: 2%;
-    }
-    
-    .section hr {
-        width: auto;
-        color: #444444;
-        height: 6px;
-        margin: 2px;
-    }
-    
-    .fig {
-        display: flex;
-        /* 水平置中 */
-        justify-content: center;
-        /* 垂直置中 */
-        align-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .figdes {
-        text-align: center;
-        color: #fff4f4;
-        background-color: rgba(169, 169, 169, 0.641);
-        position: relative;
-        top: -50px;
-    }
-    
     #logo_img {
         display: flex;
         flex-direction: row;
@@ -81,4 +51,15 @@
         width: 95%;
         border: 3px solid green;
         padding: 10px;
+    }
+    
+    #back {
+        margin: auto;
+        width: 15%;
+        padding: 10px;
+    }
+    
+    #back input {
+        background-color: #faedcd;
+        color: #023047;
     }
