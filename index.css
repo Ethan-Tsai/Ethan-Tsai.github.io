@@ -5,6 +5,17 @@ body {
     background-image: url('./img/index.jpg');
 }
 
+html {
+    background-color: #444444;
+}
+
+body {
+    background-color: #444444;
+    align-items: center;
+    margin: 5px;
+    margin-top: 10px;
+}
+
 img {
     width: 100%;
 }
@@ -55,6 +66,17 @@ h1 {
     }
     span {
         font-size: 80%;
+    }
+    #logo_img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: stretch;
+    }
+    #logo_img img {
+        height: 50px;
     }
 }
 

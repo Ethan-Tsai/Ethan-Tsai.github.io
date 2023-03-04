@@ -1,0 +1,51 @@
+html {
+    background-color: #444444;
+}
+
+body {
+    background-color: #444444;
+    align-items: center;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+h1 {
+    color: #f8f9fa;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #000000;
+    font-family: Microsoft JhengHei;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+h2 {
+    margin: 5px;
+    font-family: Microsoft JhengHei;
+}
+
+.section {
+    margin-top: 5px;
+    background-color: #f8f9fa;
+    border-radius: 2%;
+}
+
+.section hr {
+    width: auto;
+    color: #444444;
+    height: 6px;
+    margin: 2px;
+}
+
+#logo_img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: stretch;
+}
+
+#logo_img img {
+    height: 50px;
+}
