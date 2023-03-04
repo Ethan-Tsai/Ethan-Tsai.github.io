@@ -80,4 +80,7 @@ iframe {
     h1 {
         font-size: 25px;
     }
+    #logo_img img {
+        height: 45px;
+    }
 }
