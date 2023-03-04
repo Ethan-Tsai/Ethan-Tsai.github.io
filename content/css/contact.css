@@ -55,11 +55,14 @@
     
     #back {
         margin: auto;
-        width: 15%;
+        width: 35%;
         padding: 10px;
     }
     
     #back input {
         background-color: #faedcd;
         color: #023047;
+        margin: auto;
+        width: 100%;
+        padding: 10px;
     }
