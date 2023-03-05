@@ -124,3 +124,7 @@ p {
     text-decoration: none;
     color: #a5c7eb;
 }
+
+.btnDiv {
+    display: none;
+}

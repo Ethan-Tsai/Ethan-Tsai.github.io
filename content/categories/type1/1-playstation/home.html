@@ -5,8 +5,195 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- carousel 箭頭消失-->
+
+    <!-- jquery-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- bootstrap js-->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="../../physic_web.js"></script>
+    <script src="../../side_btn_move.js"></script>
     <link rel="stylesheet" href="../../all_common.css">
+
     <title>遊戲機的物理</title>
+    <style type="text/css">
+        body {
+            background-color: #444444;
+        }
+        
+        @media screen and (max-height:1153px) {
+            /*Default left-img size*/
+            /*if screen width is too small*/
+            .img-circle {
+                width: 90px;
+                height: 90px;
+            }
+            .main-nsysu {
+                height: 80px;
+                width: 100px;
+            }
+            .kubei {
+                font-size: 28px;
+            }
+        }
+        
+        @media screen and (max-height:910px) {
+            .img-circle {
+                width: 80px;
+                height: 80px;
+                margin-top: 3px;
+            }
+            .main-nsysu {
+                height: 70px;
+                width: auto;
+            }
+            .kubei {
+                font-size: 28px;
+            }
+            .video-style {
+                height: 500px;
+            }
+        }
+        
+        @media screen and (max-height:825px) {
+            .img-circle {
+                width: 60px;
+                height: 60px;
+                margin-top: 0px;
+            }
+            .video-style {
+                height: 400px;
+                margin-top: 30px;
+            }
+            .navbar-nav>li>a {
+                font-size: 17px;
+            }
+        }
+        
+        @media screen and (max-width:1200px) {
+            .tophead-style {
+                font-size: 20px;
+                left: 45%;
+            }
+            .kejibu-div {
+                font-size: 15px;
+            }
+            .img-circle {
+                width: 50px;
+                height: 50px;
+                margin-top: 0px;
+            }
+        }
+        
+        @media screen and (max-width:1120px) {
+            .navbar-nav>li>a {
+                font-size: 14px;
+            }
+            .img-circle {
+                width: 50px;
+                height: 50px;
+                margin-top: 0px;
+            }
+            .kubei {
+                font-size: 25px;
+            }
+        }
+        /*===========================Enter moblie state========================*/
+        
+        @media screen and (max-width:1019px) {
+            .navbar {
+                display: none;
+            }
+            .kubei {
+                font-size: 20px;
+                display: block;
+            }
+            #main {
+                display: block;
+            }
+            .main-nsysu {
+                display: none;
+            }
+            .btnDiv {
+                display: none;
+            }
+            .heading-text {
+                display: none;
+            }
+            .tophead-style {
+                display: none;
+            }
+            .carousel-indicators {
+                display: none;
+            }
+            .carousel_content {
+                /*更改投影片內容字體*/
+                font-size: 22px;
+            }
+            .carousel {
+                max-height: 350px;
+                margin-top: 20%;
+            }
+            .carousel .item {
+                height: 350px;
+                /*change inner item height of the carousel*/
+            }
+            /*If don't want to display pdf but want to dsiplay jpg, don't use those two lines below.*/
+            /*.embedhtml{
+
+                display:none;
+
+            }
+
+            .appmode{
+
+                display:block;
+
+            }	*/
+        }
+        /*===========================================================*/
+    </style>
+
+    <script type="text/javascript">
+        /*$(document).ready(function(){
+                                                                                                                                            
+                                                                                                                                            var art_html = 500;
+                                                                                                                                            var eng_html = 700;
+                                                                                                                                            var tec_html = 1500;
+                                                                                                                                            var sci_html = 2000;
+                                                                                                                                            var math_html = 2500;
+                                                                                                                                            var chat_html = 2000;
+                                                                                                                                            /*$("#obj").width($("#cont").width());
+                                                                                                                                            $("#obj").height($("#cont").height());
+                                                                                                                                            $("#inner-html").height(math_html+"px");
+
+                                                                                                                                        });*/
+        /*設定底下的html長度*/
+        /*var art_html_height = 500;
+        var eng_html_height = 700;
+        var tec_html_height = 1500;
+        var sci_html_height = 2000;
+        var math_html_height = 2500;
+        var oth_html_height = 4000;
+        var chat_html_height = 4000;*/
+        /*============================================================*/
+        $(document).ready(function() { /*每次進入頁面 就觸發button*/
+
+            $("#chat_btn").trigger("click");
+
+
+
+
+
+        });
+    </script>
 </head>
 
 <body>
@@ -21,19 +208,104 @@
     <h1>遊戲機的物理</h1>
 
 
-    <!--歷史項目-->
+    <!--說明文件項目-->
     <div class="section">
         <div class="sec_con">
             <h2>實驗說明文件</h2>
             <hr>
             <div id="pdfin">
-                <object data="https://ethan-tsai.github.io/content/about_us/engineering.pdf" width="99%" height="500"></object>
+                <object data="https://ethan-tsai.github.io/content/categories/type1/1-playstation/heading_pdf/chat.pdf" width="99%" height="500"></object>
             </div>
             <h5> 開啟檔案查看 <a href="heading_pdf/chat.pdf" target=”_blank”>PDF file</a>.</h5>
         </div>
-        <hr>
     </div>
-    <!--歷史項目end-->
+    <!--說明文件項目end-->
+
+    <!--歷屆優秀影片-->
+    <div class="section">
+        <div class="sec_con">
+            <h2>歷屆優秀影片</h2>
+            <hr>
+
+
+
+
+            <div id="mySidenav" class="sidenav">
+
+
+                <div id="allBTN">
+
+
+                    <!--
+    Use col-lg to control the number of the heading
+    max width:1170px
+    -->
+                    <!--<div class="row">-->
+                    <div class="btnDiv">
+                        <button id="art_btn" type="button" style="background-color: inherit;border: none"><a href="art_html.html"><img class="img-circle" src="../heading_picture/art.jpg" alt="Generic placeholder image" ></a></button>
+                        <p class="btn-text">Art/藝術</p>
+                    </div>
+                    <!-- /.col-sm-1 -->
+                    <div class="btnDiv">
+                        <button id="eng_btn" type="button" style="background-color: inherit;border: none"><a href="eng_html.html"><img class="img-circle" src="../heading_picture/engineering.jpg" alt="Generic placeholder image"></a></button>
+                        <p class="btn-text">Engineering/工程</p>
+                    </div>
+                    <!-- /.col-sm-1 -->
+                    <div class="btnDiv">
+                        <button id="tec_btn" type="button" style="background-color: inherit;border: none"><a href="tec_html.html"><img class="img-circle" src="../heading_picture/technology.jpg" alt="Generic placeholder image"></a></button>
+                        <p class="btn-text">Technology/技術</p>
+                    </div>
+                    <!-- /.col-sm-1 -->
+                    <div class="btnDiv">
+                        <button id="sci_btn" type="button" style="background-color: inherit;border: none"><a href="sci_html.html"><img class="img-circle" src="../heading_picture/science.jpg" alt="Generic placeholder image"></a></button>
+                        <p class="btn-text">Science/科學</p>
+                    </div>
+                    <!-- /.col-sm-1 -->
+                    <div class="btnDiv">
+                        <button id="math_btn" type="button" style="background-color: inherit;border: none"><a href="math_html.html"><img class="img-circle" src="../heading_picture/math.jpg" alt="Generic placeholder image"></a></button>
+                        <p class="btn-text">Mathematics/數學</p>
+                    </div>
+                    <div class="btnDiv">
+                        <button id="oth_btn" type="button" style="background-color: inherit;border: none"><a href="oth_html.html"><img class="img-circle" src="../heading_picture/other.jpg" alt="Generic placeholder image"></a></button>
+                        <p class="btn-text">進階學習</p>
+                    </div>
+                    <div class="btnDiv">
+                        <button id="chat_btn" type="button" style="background-color: inherit;border: none"><a href="chat_html.html"><img class="img-circle" src="../heading_picture/fb.jpg" alt="Generic placeholder image"></a></button>
+                        <p class="btn-text">Experiment/高中生實驗</p>
+                    </div>
+
+                    <!-- /.col-sm-1 -->
+                </div>
+                <div align="center">
+                    <iframe id="totalVideo" class="video-style" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <br>
+                <br>
+                <div class="html-video">
+                    <div class="chat-html-video"></div>
+                </div>
+
+                </br>
+                </br>
+                <!--For changing youtube video link-->
+                <a href="" id="chat_changing_video"></a>
+
+                </br>
+                </br>
+
+            </div>
+            <!--For changing youtube video link-->
+            <div align="center">
+
+
+
+
+            </div>
+        </div>
+        <!--歷屆優秀影片end-->
+
+        <!--========Responsive Design==============-->
+
 </body>
 
 </html>
