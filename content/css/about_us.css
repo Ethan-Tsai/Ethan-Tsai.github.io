@@ -127,3 +127,17 @@ p {
     text-decoration: none;
     color: #a5c7eb;
 }
+
+#back {
+    margin: auto;
+    width: 100px;
+    padding: 10px;
+}
+
+#back input {
+    background-color: #faedcd;
+    color: #023047;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
