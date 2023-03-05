@@ -57,6 +57,7 @@ iframe {
     margin: auto;
     width: 100px;
     padding: 10px;
+    padding-bottom: 50px;
 }
 
 #back input {

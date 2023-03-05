@@ -119,3 +119,9 @@ p {
     align-items: center;
     text-align: center;
 }
+
+#foot a {
+    text-emphasis: none;
+    text-decoration: none;
+    color: #a5c7eb;
+}
