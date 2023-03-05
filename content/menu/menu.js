@@ -1,7 +1,7 @@
-window.addEventListener("resize", function() {
-    "use strict";
-    window.location.reload();
-});
+// window.addEventListener("resize", function() {
+//     "use strict";
+//     window.location.reload();
+// });
 
 
 document.addEventListener("DOMContentLoaded", function() {
