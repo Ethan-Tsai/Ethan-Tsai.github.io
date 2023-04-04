@@ -126,3 +126,7 @@ p {
 .btnDiv {
     display: none;
 }
+
+#carousel-inner img {
+    height: 300px;
+}
