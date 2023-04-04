@@ -130,3 +130,8 @@ p {
 #carousel-inner img {
     height: 300px;
 }
+
+.section h2 {
+    align-items: center;
+    text-align: center;
+}
