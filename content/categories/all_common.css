@@ -60,12 +60,25 @@ h3 {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     align-content: stretch;
 }
 
 #logo_img img {
     height: 50px;
+}
+
+#logo_img p {
+    font-size: 28px;
+    text-align: center;
+    color: #003d5b;
+    padding-left: 5px;
+}
+
+@media(max-width:391px) {
+    #logo_img p {
+        font-size: 21px;
+    }
 }
 
 .navbar {
