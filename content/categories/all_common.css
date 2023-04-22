@@ -192,6 +192,14 @@ p {
     transition: all 0.3s;
 }
 
+#title.change {
+    background-color: #608799;
+}
+
+.change {
+    color: #4D3921;
+}
+
 .header.shrink h1 {
     font-size: 26px;
     -webkit-transition: all 0.3s;
