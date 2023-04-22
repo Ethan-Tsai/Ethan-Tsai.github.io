@@ -9,11 +9,11 @@ body {
 
 h1 {
     color: #edae49;
+    color: #003d5b;
+    color: white;
     font-size: 30px;
-    font-family: Microsoft JhengHei;
-    font-weight: bold;
+    font-family: 'Noto Sans TC', sans-serif;
     text-align: center;
-    margin: 5px;
 }
 
 h3 {
@@ -147,4 +147,21 @@ p {
 .section h2 {
     align-items: center;
     text-align: center;
+}
+
+#title {
+    background-color: white;
+    background-color: #003d5b;
+    align-items: center;
+}
+
+#title h1 {
+    margin: 10px;
+}
+
+#header {
+    position: sticky;
+    top: 0px;
+    z-index: 20;
+    margin-bottom: 10px;
 }
