@@ -5,9 +5,11 @@ $(function() {
         if (scroll >= shrinkHeader) {
             $('.header').addClass('shrink');
             $('#logo_img').addClass('hide');
+
         } else {
             $('.header').removeClass('shrink');
             $('#logo_img').removeClass('hide');
+
         }
     });
 

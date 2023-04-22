@@ -153,6 +153,12 @@ p {
     background-color: white;
     background-color: #003d5b;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content: stretch;
 }
 
 #title h1 {
@@ -178,10 +184,6 @@ p {
     line-height: 80%;
 }
 
-.hide {
-    visibility: hidden;
-}
-
 .header h1 {
     font-size: 30px;
     font-weight: normal;
@@ -191,7 +193,7 @@ p {
 }
 
 .header.shrink h1 {
-    font-size: 24px;
+    font-size: 26px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
