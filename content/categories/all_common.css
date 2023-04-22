@@ -165,3 +165,34 @@ p {
     z-index: 20;
     margin-bottom: 10px;
 }
+
+.header {
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+}
+
+.header.shrink {
+    height: 80%;
+    line-height: 80%;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: normal;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.header.shrink h1 {
+    font-size: 24px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
