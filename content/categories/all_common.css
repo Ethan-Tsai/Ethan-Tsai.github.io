@@ -231,5 +231,12 @@ p {
 
 .html-content {
     color: black;
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+#re iframe {
+    width: 560px;
+    height: 415px;
+    width: 100%;
 }
