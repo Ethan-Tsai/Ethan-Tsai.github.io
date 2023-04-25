@@ -132,6 +132,8 @@ p {
     background-color: #fff4f4;
     align-items: center;
     text-align: center;
+    color: black;
+    background-color: rgb(200, 200, 200);
 }
 
 #foot a {
