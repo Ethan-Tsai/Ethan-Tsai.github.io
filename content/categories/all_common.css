@@ -77,7 +77,7 @@ h3 {
 
 @media(max-width:391px) {
     #logo_img p {
-        font-size: 21px;
+        font-size: 20px;
     }
 }
 
@@ -92,7 +92,7 @@ iframe {
 
 @media(max-width:376px) {
     h1 {
-        font-size: 25px;
+        font-size: 24px;
     }
     #logo_img img {
         height: 45px;
@@ -197,7 +197,7 @@ p {
 }
 
 .change {
-    color: #4D3921;
+    color: #ffffff;
 }
 
 .header.shrink h1 {
@@ -205,4 +205,31 @@ p {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+}
+
+#STEAM {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 900;
+    font-size: larger;
+}
+
+#生活物理 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 900;
+}
+
+#STEAM2 {
+    font-weight: 300;
+    font-size: larger;
+    color: rgb(0, 21, 255);
+}
+
+#生活物理2 {
+    font-family: 'Libre Baskerville', serif;
+    color: rgb(0, 21, 255);
+}
+
+.html-content {
+    color: black;
+    font-size: 15px;
 }

@@ -5,6 +5,7 @@ $(function() {
         if (scroll >= shrinkHeader) {
             $('.header').addClass('shrink');
             $('#logo_img').addClass('hide');
+            $('.test').addClass('hide');
             $('#title').addClass('change');
             $('#h1').addClass('change');
         } else {
@@ -12,6 +13,7 @@ $(function() {
             $('#logo_img').removeClass('hide');
             $('#title').removeClass('change');
             $('#h1').removeClass('change');
+            $('.test').removeClass('hide');
         }
     });
 
