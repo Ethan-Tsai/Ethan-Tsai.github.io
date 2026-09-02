@@ -726,9 +726,15 @@ section {
 --------------------------------------------------------------*/
 
 .services .icon-box {
+    width: 100%;
+    min-height: 240px;
     padding: 30px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: #fff;
     box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
     transition: all 0.3s ease-in-out;
@@ -765,9 +771,17 @@ section {
 }
 
 .services .description {
+    max-width: 220px;
     font-size: 15px;
     line-height: 28px;
     margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .services .icon-box {
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+    }
 }
 
 .services .icon-box:hover {
