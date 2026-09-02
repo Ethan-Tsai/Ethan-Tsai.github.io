@@ -177,78 +177,124 @@
   }
 
   /**
-   * Testimonials slider
+   * Baseball timing mini game
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+  const game = select('#baseball-game');
+  if (game) {
+    const ball = select('#baseball');
+    const swingButton = select('#swing-button');
+    const message = select('#game-message');
+    const scoreDisplay = select('#game-score');
+    const streakDisplay = select('#game-streak');
+    const bestDisplay = select('#game-best');
+    let animationFrame;
+    let pitchStartedAt;
+    let pitchDuration;
+    let ballPosition = 6;
+    let isPitching = false;
+    let score = 0;
+    let streak = 0;
+    let best = 0;
+
+    try {
+      best = Number(window.localStorage.getItem('baseball-best-streak')) || 0;
+    } catch (error) {
+      best = 0;
     }
-  });
+    bestDisplay.textContent = best;
 
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
+    const updateStats = () => {
+      scoreDisplay.textContent = score;
+      streakDisplay.textContent = streak;
+      bestDisplay.textContent = best;
+    };
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+    const setMessage = (text, type = '') => {
+      message.textContent = text;
+      message.classList.remove('success', 'miss');
+      if (type) message.classList.add(type);
+    };
 
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
+    const saveBest = () => {
+      if (streak <= best) return;
+      best = streak;
+      try {
+        window.localStorage.setItem('baseball-best-streak', String(best));
+      } catch (error) {
+        // The game still works when browser storage is unavailable.
+      }
+    };
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
+    const endPitch = (text, type) => {
+      isPitching = false;
+      window.cancelAnimationFrame(animationFrame);
+      ball.classList.remove('is-pitching');
+      swingButton.textContent = 'Next pitch';
+      setMessage(text, type);
+      updateStats();
+    };
 
-      }, true);
-    }
+    const missPitch = () => {
+      streak = 0;
+      endPitch('Strike — that one got past you.', 'miss');
+    };
 
-  });
+    const animatePitch = (timestamp) => {
+      if (!pitchStartedAt) pitchStartedAt = timestamp;
+      const progress = Math.min((timestamp - pitchStartedAt) / pitchDuration, 1);
+      ballPosition = 6 + (progress * 88);
+      ball.style.left = `${ballPosition}%`;
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+      if (progress < 1 && isPitching) {
+        animationFrame = window.requestAnimationFrame(animatePitch);
+      } else if (isPitching) {
+        missPitch();
+      }
+    };
 
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+    const startPitch = () => {
+      window.cancelAnimationFrame(animationFrame);
+      isPitching = true;
+      pitchStartedAt = 0;
+      pitchDuration = 1700 + (Math.random() * 850);
+      ballPosition = 6;
+      ball.style.left = '6%';
+      ball.classList.add('is-pitching');
+      swingButton.textContent = 'Swing!';
+      setMessage('Watch the ball…');
+      animationFrame = window.requestAnimationFrame(animatePitch);
+    };
 
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
+    const swing = () => {
+      if (!isPitching) {
+        startPitch();
+        return;
+      }
+
+      if (ballPosition >= 49 && ballPosition <= 54) {
+        score += 4;
+        streak += 1;
+        saveBest();
+        endPitch('Home run! Perfect timing. +4 runs', 'success');
+      } else if (ballPosition >= 45 && ballPosition <= 58) {
+        score += 1;
+        streak += 1;
+        saveBest();
+        endPitch('Base hit! Nice contact. +1 run', 'success');
+      } else {
+        streak = 0;
+        endPitch(ballPosition < 45 ? 'Too early — strike.' : 'Too late — strike.', 'miss');
+      }
+    };
+
+    swingButton.addEventListener('click', swing);
+    document.addEventListener('keydown', (event) => {
+      const tagName = document.activeElement?.tagName;
+      if (event.code === 'Space' && isPitching && !['INPUT', 'TEXTAREA', 'SELECT'].includes(tagName)) {
+        event.preventDefault();
+        swing();
+      }
+    });
+  }
 
 })()

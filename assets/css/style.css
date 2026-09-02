@@ -616,7 +616,7 @@ section {
 }
 
 .about .image {
-    background: url("../../img/pro_pic5.jpg") center center no-repeat;
+    background: url("../img/ethan-sakura.jpg") center 42% no-repeat;
     background-size: cover;
     min-height: 500px;
 }
@@ -776,6 +776,354 @@ section {
 
 .services .icon-box:hover .title a {
     color: #ffb727;
+}
+
+
+/*--------------------------------------------------------------
+# Interests, YouTube, and Baseball Game
+--------------------------------------------------------------*/
+
+.interests {
+    background: #f7f8fa;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.interest-card {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 32px;
+    border: 1px solid #e6e8eb;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(59, 67, 74, 0.08);
+}
+
+.interest-icon {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff4df;
+    font-size: 36px;
+}
+
+.interest-card h3,
+.youtube-showcase h3,
+.baseball-game h3 {
+    margin: 0 0 12px;
+    color: #3b434a;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+
+.interest-card p {
+    margin: 0;
+    color: #5f6973;
+}
+
+.youtube-showcase {
+    margin-top: 28px;
+    padding: 34px;
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(360px, 1.2fr);
+    gap: 38px;
+    align-items: center;
+    border-radius: 18px;
+    background: #3b434a;
+    color: #fff;
+    box-shadow: 0 18px 45px rgba(59, 67, 74, 0.18);
+}
+
+.youtube-showcase h3 {
+    margin-top: 14px;
+    color: #fff;
+    font-size: 30px;
+}
+
+.youtube-showcase p {
+    color: rgba(255, 255, 255, .76);
+}
+
+.youtube-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffb727;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.youtube-label i {
+    color: #ff3b30;
+    font-size: 24px;
+}
+
+.youtube-button {
+    margin-top: 12px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: #ffb727;
+    color: #fff;
+    font-weight: 600;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.youtube-button:hover {
+    background: #f3a200;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.youtube-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #111;
+}
+
+.youtube-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.baseball-game {
+    margin-top: 28px;
+    padding: 34px;
+    border: 1px solid #e6e8eb;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 18px 45px rgba(59, 67, 74, 0.1);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.game-header p {
+    margin: 0;
+    color: #687683;
+}
+
+.game-kicker {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffb727;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+.game-stats {
+    display: flex;
+    gap: 10px;
+}
+
+.game-stats div {
+    min-width: 72px;
+    padding: 10px 12px;
+    display: grid;
+    text-align: center;
+    border-radius: 10px;
+    background: #eef0f2;
+}
+
+.game-stats strong {
+    color: #3b434a;
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.game-stats span {
+    color: #82909c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.pitch-lane {
+    position: relative;
+    height: 108px;
+    margin-top: 28px;
+    overflow: hidden;
+    border: 2px solid #dbe0e5;
+    border-radius: 14px;
+    background:
+        linear-gradient(rgba(255,255,255,.74), rgba(255,255,255,.74)),
+        repeating-linear-gradient(90deg, #eef0f2 0, #eef0f2 38px, #e4e8eb 39px, #e4e8eb 40px);
+}
+
+.pitch-lane::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px dashed #b8c0c7;
+}
+
+.pitch-start,
+.plate {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #82909c;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.pitch-start { left: 14px; }
+.plate { right: 18px; font-size: 26px; }
+
+.strike-zone {
+    position: absolute;
+    z-index: 1;
+    left: 45%;
+    top: 10px;
+    bottom: 10px;
+    width: 13%;
+    border: 2px solid #ffb727;
+    border-radius: 10px;
+    background: rgba(255, 183, 39, .18);
+    box-shadow: 0 0 24px rgba(255, 183, 39, .22);
+}
+
+.baseball {
+    position: absolute;
+    z-index: 3;
+    left: 6%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 42px;
+    line-height: 1;
+    filter: drop-shadow(0 5px 6px rgba(59, 67, 74, .2));
+    will-change: left, transform;
+}
+
+.baseball.is-pitching {
+    animation: baseball-spin .55s linear infinite;
+}
+
+@keyframes baseball-spin {
+    from { transform: translate(-50%, -50%) rotate(0); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.game-controls {
+    min-height: 50px;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.swing-button {
+    min-width: 130px;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: #ffb727;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.swing-button:hover,
+.swing-button:focus-visible {
+    background: #f3a200;
+    transform: translateY(-2px);
+}
+
+.game-message {
+    margin: 0;
+    color: #687683;
+    font-weight: 600;
+}
+
+.game-message.success { color: #14804a; }
+.game-message.miss { color: #b5432f; }
+
+@media (max-width: 991px) {
+    .youtube-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-card {
+        grid-template-columns: 58px 1fr;
+        padding: 24px;
+    }
+
+    .interest-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+
+    .youtube-showcase,
+    .baseball-game {
+        padding: 24px;
+    }
+
+    .youtube-showcase {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .game-header {
+        flex-direction: column;
+    }
+
+    .game-stats {
+        width: 100%;
+    }
+
+    .game-stats div {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .game-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .swing-button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .baseball.is-pitching {
+        animation: none;
+    }
 }
 
 

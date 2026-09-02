@@ -21,8 +21,6 @@
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -49,10 +47,8 @@
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
-                <li><a class="nav-link scrollto" href="#links">Related links</a></li>
-
-
-                <li><a class="nav-link scrollto" href="#links">Contact</a></li>
+                <li><a class="nav-link scrollto" href="#interests">Interests</a></li>
+                <li><a class="nav-link scrollto" href="#links">Links</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -379,8 +375,95 @@
 
 
 
+<!-- ======= My Interests Section ======= -->
+<section id="interests" class="interests section-bg">
+    <div class="container">
+        <div class="section-title">
+            <span class="eng">My Interests</span>
+            <h2 class="chi">我的興趣</h2>
+            <p class="english_text">A little more about what keeps me curious outside of work and school.</p>
+            <p class="chinese_text">除了工作與課業之外，這些興趣也持續帶給我新的能量與靈感。</p>
+        </div>
+
+        <div class="interest-grid">
+            <article class="interest-card">
+                <div class="interest-icon" aria-hidden="true">⚾</div>
+                <div class="english_text">
+                    <h3>Baseball</h3>
+                    <p>I enjoy both playing and watching baseball, and previously served as captain of my department team at NSYSU. The sport keeps me competitive, patient, and ready for the next pitch.</p>
+                </div>
+                <div class="chinese_text">
+                    <h3>棒球</h3>
+                    <p>我喜歡打棒球也喜歡看球，過去曾擔任中山資管系棒隊長。棒球讓我保持競爭心、耐心，也提醒我永遠準備好迎接下一球。</p>
+                </div>
+            </article>
+
+            <article class="interest-card">
+                <div class="interest-icon" aria-hidden="true">♫</div>
+                <div class="english_text">
+                    <h3>Music</h3>
+                    <p>Playing piano and violin gives me a different way to think, reset, and create. Music has been part of my life since high school and remains one of my favorite ways to recharge.</p>
+                </div>
+                <div class="chinese_text">
+                    <h3>音樂</h3>
+                    <p>彈鋼琴與拉小提琴讓我用不同方式思考、沉澱與創作。音樂從高中時期就是生活的一部分，也是我最喜歡的充電方式之一。</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="youtube-showcase">
+            <div class="youtube-copy english_text">
+                <span class="youtube-label"><i class="bx bxl-youtube" aria-hidden="true"></i> Creator in progress</span>
+                <h3>I'm experimenting with YouTube.</h3>
+                <p>I'm learning how to share ideas and experiences through video. Here is my latest upload — this channel is still a work in progress, and that is part of the fun.</p>
+                <a class="youtube-button" href="https://www.youtube.com/watch?v=osB_j0L7z-8" target="_blank" rel="noopener">Watch on YouTube <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="youtube-copy chinese_text">
+                <span class="youtube-label"><i class="bx bxl-youtube" aria-hidden="true"></i> 頻道經營中</span>
+                <h3>我正在嘗試經營 YouTube。</h3>
+                <p>我正在學習如何透過影片分享想法與生活經驗。這是最新上傳的影片，頻道仍在慢慢成長，而探索的過程正是最有趣的部分。</p>
+                <a class="youtube-button" href="https://www.youtube.com/watch?v=osB_j0L7z-8" target="_blank" rel="noopener">前往 YouTube 觀看 <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="youtube-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/osB_j0L7z-8?si=WJt0jtrmJEnKPvIN" title="Shang-Chen Tsai's latest YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="baseball-game" id="baseball-game">
+            <div class="game-header">
+                <div>
+                    <span class="game-kicker">MINI GAME</span>
+                    <h3 class="english_text">Can you time the perfect swing?</h3>
+                    <h3 class="chinese_text">你能抓到完美的揮棒時機嗎？</h3>
+                    <p class="english_text">Start the pitch, then press the button or Space when the ball enters the golden strike zone.</p>
+                    <p class="chinese_text">開始投球後，在球進入金色好球帶時按下按鈕或空白鍵。</p>
+                </div>
+                <div class="game-stats" aria-label="Baseball game score">
+                    <div><strong id="game-score">0</strong><span>Runs</span></div>
+                    <div><strong id="game-streak">0</strong><span>Streak</span></div>
+                    <div><strong id="game-best">0</strong><span>Best</span></div>
+                </div>
+            </div>
+
+            <div class="pitch-lane" aria-label="A baseball moves from left to right toward a golden strike zone">
+                <span class="pitch-start" aria-hidden="true">PITCH</span>
+                <span class="strike-zone" aria-hidden="true"></span>
+                <span class="baseball" id="baseball" aria-hidden="true">⚾</span>
+                <span class="plate" aria-hidden="true">⌂</span>
+            </div>
+
+            <div class="game-controls">
+                <button class="swing-button" id="swing-button" type="button">Start pitch</button>
+                <p class="game-message" id="game-message" role="status" aria-live="polite">Ready when you are.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End My Interests Section -->
+
+
 <!-- ======= My Links Section ======= -->
-<section id="links" class="links">
+<section id="links" class="services">
     <div class="container">
         <div class="section-title">
             <span class="eng">My Links</span>
@@ -458,13 +541,8 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
