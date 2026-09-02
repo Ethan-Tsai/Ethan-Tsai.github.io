@@ -475,8 +475,8 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                 <div class="icon-box">
                     <div class="icon"><i class="bi bi-file-earmark-pdf"></i></div>
-                    <h4 class="title"><a href="assets/Shang-Chen-Tsai-Resume.pdf" target="_blank">CV</a></h4>
-                    <p class="description">My resume with more details</p>
+                    <h4 class="title"><button class="cv-access-link" id="cv-access-open" type="button" aria-haspopup="dialog" aria-controls="cv-access-dialog">CV</button></h4>
+                    <p class="description">View after a quick access check</p>
                 </div>
             </div>
 
@@ -507,6 +507,37 @@
     </div>
 </section>
 <!-- End My Links Section -->
+
+<div class="cv-access-modal" id="cv-access-dialog" hidden>
+    <div class="cv-access-backdrop" data-cv-close></div>
+    <div class="cv-access-panel" role="dialog" aria-modal="true" aria-labelledby="cv-access-title" aria-describedby="cv-access-description" tabindex="-1">
+        <button class="cv-access-close" type="button" data-cv-close aria-label="Close CV access dialog"><i class="bi bi-x-lg"></i></button>
+        <p class="cv-access-eyebrow">CV access</p>
+        <h2 id="cv-access-title">What brings you here?</h2>
+        <p id="cv-access-description">This quick check helps reduce casual automated access. Your answer is not collected or stored.</p>
+
+        <form id="cv-access-form">
+            <fieldset class="cv-purpose-list">
+                <legend>I’m viewing this CV for:</legend>
+                <label><input type="radio" name="cv-purpose" value="hiring" required><span>Recruiting or hiring</span></label>
+                <label><input type="radio" name="cv-purpose" value="academic"><span>Academic or professional networking</span></label>
+                <label><input type="radio" name="cv-purpose" value="curious"><span>I’m curious about your work</span></label>
+                <label><input type="radio" name="cv-purpose" value="other"><span>Another professional reason</span></label>
+            </fieldset>
+
+            <label class="cv-access-consent">
+                <input id="cv-access-consent" type="checkbox">
+                <span>I understand this CV is shared for professional review only.</span>
+            </label>
+
+            <div class="cv-access-actions">
+                <button class="cv-access-cancel" type="button" data-cv-close>Cancel</button>
+                <button class="cv-access-continue" id="cv-access-continue" type="submit" disabled>Continue to CV</button>
+            </div>
+            <p class="cv-access-note"><i class="bi bi-shield-check"></i> This discourages casual automated access, but cannot prevent saving after the CV opens.</p>
+        </form>
+    </div>
+</div>
 
 
     </main>

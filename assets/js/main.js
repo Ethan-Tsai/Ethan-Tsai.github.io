@@ -177,6 +177,74 @@
   }
 
   /**
+   * Lightweight CV access check
+   * This is a privacy deterrent for a static site, not authentication.
+   */
+  const cvOpenButton = select('#cv-access-open');
+  const cvDialog = select('#cv-access-dialog');
+  const cvForm = select('#cv-access-form');
+  if (cvOpenButton && cvDialog && cvForm) {
+    const cvPanel = cvDialog.querySelector('.cv-access-panel');
+    const cvConsent = select('#cv-access-consent');
+    const cvContinue = select('#cv-access-continue');
+    const closeButtons = cvDialog.querySelectorAll('[data-cv-close]');
+    const focusableSelector = 'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])';
+
+    const updateCvAccess = () => {
+      const hasPurpose = Boolean(cvForm.querySelector('input[name="cv-purpose"]:checked'));
+      cvContinue.disabled = !(hasPurpose && cvConsent.checked);
+    };
+
+    const openCvDialog = () => {
+      cvDialog.hidden = false;
+      document.body.classList.add('cv-modal-open');
+      cvPanel.focus();
+    };
+
+    const closeCvDialog = () => {
+      cvDialog.hidden = true;
+      document.body.classList.remove('cv-modal-open');
+      cvOpenButton.focus();
+    };
+
+    cvOpenButton.addEventListener('click', openCvDialog);
+    closeButtons.forEach((button) => button.addEventListener('click', closeCvDialog));
+    cvForm.addEventListener('change', updateCvAccess);
+
+    cvForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      updateCvAccess();
+      if (cvContinue.disabled) return;
+
+      const cvLocation = ['assets', 'Shang-Chen-Tsai-Resume.pdf'].join('/');
+      window.open(cvLocation, '_blank', 'noopener,noreferrer');
+      closeCvDialog();
+      cvForm.reset();
+      updateCvAccess();
+    });
+
+    cvDialog.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeCvDialog();
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+      const focusable = [...cvDialog.querySelectorAll(focusableSelector)];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
+  /**
    * Baseball timing mini game
    */
   const game = select('#baseball-game');
