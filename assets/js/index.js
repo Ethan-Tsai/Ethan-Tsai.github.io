@@ -1,7 +1,7 @@
 window.onload = function() {
-    $('.chinese_text').addClass('show');
-    $('.section-title h2.chi').addClass('emph');
-    $('.section-title span.eng').addClass('nor');
+    $('.english_text').addClass('show');
+    $('.section-title span.eng').addClass('emph');
+    $('.section-title h2.chi').addClass('nor');
     $(".eng").click(function() {
         $('.english_text').addClass('show');
         $('.chinese_text').removeClass('show');
