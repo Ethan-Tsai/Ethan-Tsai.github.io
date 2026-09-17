@@ -216,7 +216,7 @@
       updateCvAccess();
       if (cvContinue.disabled) return;
 
-      const cvLocation = ['assets', 'Shang-Chen-Tsai-Resume.pdf'].join('/');
+      const cvLocation = ['assets', 'Shang-Chen-Tsai-Resume.pdf'].join('/') + '?v=20260917';
       window.open(cvLocation, '_blank', 'noopener,noreferrer');
       closeCvDialog();
       cvForm.reset();
